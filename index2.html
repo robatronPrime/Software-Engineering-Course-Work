@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MyPlanner.co.uk: Home Page</title>
+    <link rel="stylesheet" type="text/css"
+        href="unsemantic-grid-responsive-tablet.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" 
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+    
+<body>
+    
+    <section id="Logo" class="grid-100 tablet-grid-100 mobile-grid-100">
+        <img src="images/logo1.png" alt="logo">
+    </section>
+    
+    <section id="content" class="grid-25 tablet-grid-100 mobile-grid-100">
+        
+        <section id="title" class="grid-100 tablet-grid-100 mobile-grid-100">
+            <h1>Choose a Diagram to Create</h1>
+                    
+            <button type="button" id="wbtButton">
+                <h2>WBT</h2>                   
+            </button>
+            
+            <button type="button" id="pertButton">
+                <h2>PERT</h2>
+            </button>
+            
+            <button type="button" id="ganttButton">
+                <h2>GANTT</h2>
+            </button>
+        </section>
+        
+        <section id="display" class="grid-100 tablet-grid-100 mobile-grid-100">
+            
+            <fieldset id="wbtField" class="chart">
+                
+                <section id="wbtForm" class="grid-10 tablet-grid-100 mobile-grid-100">
+                    <h3>WBT</h3>
+                </section>
+                
+                <section id="wbtDiagram" class="grid-90 tablet-grid-100 mobile-grid-100">
+                    <button type="button" id="addBoxButton" onclick="appendBox()">
+                        <p>Click to add a box.</p>                   
+                    </button>
+                    
+                </section>
+                
+            </fieldset>
+            
+            <fieldset id="pertField" class="chart">
+                
+                <section id="pertForm" class="form" class="grid-10 tablet-grid-100 mobile-grid-100">
+                    <h3>PERT</h3>
+                </section>
+                
+                <section id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
+                    
+                </section>
+                
+            </fieldset>
+            
+            <fieldset id="ganttField" class="chart">
+                
+                <section id="ganttForm" class="form" class="grid-10 tablet-grid-100 mobile-grid-100">
+                    <h3>GANTT</h3>
+                </section>
+                
+                <section id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
+                    
+                </section>
+                
+            </fieldset>
+            
+        </section>
+        
+    </section>
+    
+    <script>
+        $(document).ready(function(){
+            
+            $("#wbtField").hide();
+            $("#pertField").hide();
+            $("#ganttField").hide();
+            
+            $("#wbtButton").click(function(){
+                $("#wbtField").toggle();
+            });
+            
+            $("#pertButton").click(function(){
+                $("#pertField").toggle();
+            });
+            
+            $("#ganttButton").click(function(){
+                $("#ganttField").toggle();
+            });
+            
+        });
+        
+        function appendBox(){
+            
+            var txt1 = document.createElement("p");
+            txt1.innerHTML = "Test";
+            
+            function removeBox(){
+                $("div").remove("#drag");
+            };
+            
+            jQuery("<div/>", {
+                id: "drag",
+                text: txt1
+            }).appendTo("#wbtDiagram");  
+        
+        
+            jQuery("<button/>", {
+                id: "removeBoxButton",
+                click: "removeBox()",
+                text: "Click to remove a box."
+            }).appendTo("#drag");
+            
+        };
+    </script>
+    
+</body>
+
+</html>
