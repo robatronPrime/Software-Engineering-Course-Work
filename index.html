@@ -12,33 +12,6 @@
     <link rel="stylesheet" 
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script>
-        $(document).ready(function(){
-            
-            $("#wbtField").hide();
-            $("#pertField").hide();
-            $("#ganttField").hide();
-            
-            $("#wbtButton").click(function(){
-                $("#wbtField").toggle();
-            });
-            
-            $("#pertButton").click(function(){
-                $("#pertField").toggle();
-            });
-            
-            $("#ganttButton").click(function(){
-                $("#ganttField").toggle();
-            });
-            
-            $(function() {
-                $( ".drag" ).draggable();
-            });
-        });
-    </script>
 </head>
     
 <body>
@@ -73,14 +46,11 @@
                     <h3>WBT</h3>
                 </section>
                 
-                <section id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
-                    <div id="draggable" class="drag">
-                        <p>test1a</p>
-                    </div>
+                <section id="wbtDiagram" class="grid-90 tablet-grid-100 mobile-grid-100">
+                    <button type="button" id="addBoxButton" onclick="appendBox()">
+                        <p>Click to add a box.</p>                   
+                    </button>
                     
-                    <div id="draggable" class="drag">
-                        <p>test1b</p>
-                    </div>
                 </section>
                 
             </fieldset>
@@ -92,9 +62,7 @@
                 </section>
                 
                 <section id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
-                    <div id="draggable" class="drag">
-                        <p>test1</p>
-                    </div>
+                    
                 </section>
                 
             </fieldset>
@@ -106,9 +74,7 @@
                 </section>
                 
                 <section id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
-                    <div id="draggable" class="drag">
-                        <p>test1</p>
-                    </div>
+                    
                 </section>
                 
             </fieldset>
@@ -116,6 +82,51 @@
         </section>
         
     </section>
+    
+    <script>
+        $(document).ready(function(){
+            
+            $("#wbtField").hide();
+            $("#pertField").hide();
+            $("#ganttField").hide();
+            
+            $("#wbtButton").click(function(){
+                $("#wbtField").toggle();
+            });
+            
+            $("#pertButton").click(function(){
+                $("#pertField").toggle();
+            });
+            
+            $("#ganttButton").click(function(){
+                $("#ganttField").toggle();
+            });
+            
+        });
+        
+        function appendBox(){
+            
+            var txt1 = document.createElement("p");
+            txt1.innerHTML = "Test";
+            
+            function removeBox(){
+                $("div").remove("#drag");
+            };
+            
+            jQuery("<div/>", {
+                id: "drag",
+                text: txt1
+            }).appendTo("#wbtDiagram");  
+        
+        
+            jQuery("<button/>", {
+                id: "removeBoxButton",
+                click: "removeBox()",
+                text: "Click to remove a box."
+            }).appendTo("#drag");
+            
+        };
+    </script>
     
 </body>
 
