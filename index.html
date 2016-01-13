@@ -17,7 +17,7 @@
 <body>
     
     <section id="Logo" class="grid-100 tablet-grid-100 mobile-grid-100">
-        <img src="images/logo1.png" alt="logo">
+        <img src="images/logo.png" alt="logo">
     </section>
     
     <section id="content" class="grid-25 tablet-grid-100 mobile-grid-100">
@@ -43,13 +43,15 @@
             <fieldset id="wbtField" class="chart">
                 
                 <section id="wbtForm" class="grid-10 tablet-grid-100 mobile-grid-100">
-                    <h3>WBT</h3>
-                </section>
-                
-                <section id="wbtDiagram" class="grid-90 tablet-grid-100 mobile-grid-100">
+                    <h2>WBT</h2>
+                    
                     <button type="button" id="addBoxButton" onclick="appendBox()">
                         <p>Click to add a box.</p>                   
                     </button>
+                    
+                </section>
+                
+                <section id="wbtDiagram" class="grid-90 tablet-grid-100 mobile-grid-100">
                     
                 </section>
                 
@@ -58,7 +60,7 @@
             <fieldset id="pertField" class="chart">
                 
                 <section id="pertForm" class="form" class="grid-10 tablet-grid-100 mobile-grid-100">
-                    <h3>PERT</h3>
+                    <h2>PERT</h2>
                 </section>
                 
                 <section id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
@@ -84,6 +86,9 @@
     </section>
     
     <script>
+        var txt1 = document.createElement("p");
+            txt1.innerHTML = "Test";
+        
         $(document).ready(function(){
             
             $("#wbtField").hide();
@@ -106,13 +111,6 @@
         
         function appendBox(){
             
-            var txt1 = document.createElement("p");
-            txt1.innerHTML = "Test";
-            
-            function removeBox(){
-                $("div").remove("#drag");
-            };
-            
             jQuery("<div/>", {
                 id: "drag",
                 text: txt1
@@ -124,8 +122,12 @@
                 click: "removeBox()",
                 text: "Click to remove a box."
             }).appendTo("#drag");
-            
         };
+        
+        function removeBox(){
+            $("div").remove("#drag");
+        };
+        
     </script>
     
 </body>
