@@ -4,4 +4,13 @@ Help found here: https://help.github.com/
 
 # Hello World!
 
-NO
+#To Do
+Working on Diagrams
+- WBT
+- Gantt
+- Pert
+Fleshing out - about, what is, manual(later on) -> tutorial(advanced for later)
+Database- UML, actual Database --> Ajaimon
+Building API, RESTful if possible 
+Button - opaque or sth else ot indicate that they are pressed --> Rob
+building - 
