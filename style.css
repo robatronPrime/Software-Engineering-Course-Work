@@ -29,9 +29,11 @@ button{
 }
 
 button:hover {
-    background-color: #CC3A4B; /* Green */
+    background-color: #CC3A4B;
     color: white;
 }
+
+
 
 fieldset{
     border: none;
@@ -39,6 +41,7 @@ fieldset{
     height: 30em;
     -webkit-box-shadow: 5px 5px 5px 5px #193441;
     box-shadow: 5px 5px 5px 5px #193441;
+
 }
 
 section #title, #charts{
@@ -61,6 +64,7 @@ img{
     border: solid;
     border-color: #3A9DCC;
     height: 100%;
+    visibility: hidden;
 }
 
 #Logo{
@@ -81,6 +85,8 @@ img{
     width: 10em;
     height: auto;
 }
+
+
 
 @font-face{
     font-family: LibreBaskerville-Regular;
