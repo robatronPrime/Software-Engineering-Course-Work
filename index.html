@@ -6,130 +6,141 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MyPlanner.co.uk: Home Page</title>
+    <!--The respossive libray.-->
     <link rel="stylesheet" type="text/css"
         href="unsemantic-grid-responsive-tablet.css"/>
+    <!--Style sheet link.-->
     <link rel="stylesheet" type="text/css" href="style.css"/>
-    <link rel="stylesheet" 
+    <!--Link to Font Awesome, a image libary.-->
+    <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!--Ajax link-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
-    
+
 <body>
-    
+
     <section id="Logo" class="grid-100 tablet-grid-100 mobile-grid-100">
         <img src="images/logo.png" alt="logo">
     </section>
-    
+
     <section id="content" class="grid-25 tablet-grid-100 mobile-grid-100">
-        
+
         <section id="title" class="grid-100 tablet-grid-100 mobile-grid-100">
             <h1>Choose a Diagram to Create</h1>
-                    
-            <button type="button" id="wbtButton">
-                <h2>WBT</h2>                   
-            </button>
-            
-            <button type="button" id="pertButton">
+            <a type="button" id="wbtButton" class="">
+                <h2>WBT</h2>
+            </a>
+            <a type="button" id="pertButton" class="">
                 <h2>PERT</h2>
-            </button>
-            
-            <button type="button" id="ganttButton">
+            </a>
+            <a type="button" id="ganttButton" class="">
                 <h2>GANTT</h2>
-            </button>
+            </a>
+            <a type="button" id="infoButton" class="">
+                <h2>INFO</h2>
+            </a>
         </section>
-        
+
         <section id="display" class="grid-100 tablet-grid-100 mobile-grid-100">
-            
+
             <fieldset id="wbtField" class="chart">
-                
                 <section id="wbtForm" class="grid-10 tablet-grid-100 mobile-grid-100">
                     <h2>WBT</h2>
-                    
                     <button type="button" id="addBoxButton" onclick="appendBox()">
-                        <p>Click to add a box.</p>                   
+                        <p>Click to add a box.</p>
                     </button>
-                    
                 </section>
-                
                 <section id="wbtDiagram" class="grid-90 tablet-grid-100 mobile-grid-100">
-                    
                 </section>
-                
             </fieldset>
-            
+
             <fieldset id="pertField" class="chart">
-                
                 <section id="pertForm" class="form" class="grid-10 tablet-grid-100 mobile-grid-100">
                     <h2>PERT</h2>
                 </section>
-                
                 <section id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
-                    
                 </section>
-                
             </fieldset>
-            
+
             <fieldset id="ganttField" class="chart">
-                
                 <section id="ganttForm" class="form" class="grid-10 tablet-grid-100 mobile-grid-100">
                     <h3>GANTT</h3>
                 </section>
-                
                 <section id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
-                    
                 </section>
-                
             </fieldset>
-            
+
+            <fieldset id="infoField" class="chart">
+                <section id="infoContent" class="form" class="grid-10 tablet-grid-100 mobile-grid-100">
+                    <h3>Information</h3>
+                </section>
+            </fieldset>
+
         </section>
-        
+
     </section>
-    
+
     <script>
-        var txt1 = document.createElement("p");
-            txt1.innerHTML = "Test";
-        
-        $(document).ready(function(){
-            
-            $("#wbtField").hide();
-            $("#pertField").hide();
-            $("#ganttField").hide();
-            
-            $("#wbtButton").click(function(){
-                $("#wbtField").toggle();
-            });
-            
-            $("#pertButton").click(function(){
-                $("#pertField").toggle();
-            });
-            
-            $("#ganttButton").click(function(){
-                $("#ganttField").toggle();
-            });
-            
-        });
-        
+
+    var
+    wbtB = document.getElementById('wbtButton'),
+    pertB = document.getElementById('pertButton'),
+    ganttB = document.getElementById('ganttButton'),
+    infoB = document.getElementById('infoButton')
+    ;
+
+    wbtB.onclick = function() {showHideWBT()}
+    pertB.onclick = function() {showHidePERT()}
+    ganttB.onclick = function() {showHideGantt()}
+    infoB.onclick = function() {showHideInfo()}
+
+    function showHideWBT() {
+        var wbtF = document.getElementById('wbtField');
+        wbtF.style.display = (wbtF.style.display == 'block') ? 'none' : 'block';
+
+        if (wbtB.className == 'active') wbtB.classList.remove('active');
+        wbtB.classList.add('active');
+    }
+
+    function showHidePERT() {
+      var pertF = document.getElementById('pertField');
+      pertF.style.display = (pertF.style.display == "block") ? "none" : "block";
+    }
+
+    function showHideGantt() {
+      var ganttF = document.getElementById('ganttField');
+      ganttF.style.display = (ganttF.style.display == "block") ? "none" : "block";
+    }
+
+    function showHideInfo() {
+      var infoF = document.getElementById('infoField');
+      infoF.style.display = (infoF.style.display == "block") ? "none" : "block";
+    }
+
+
+
         function appendBox(){
-            
+
             jQuery("<div/>", {
                 id: "drag",
                 text: txt1
-            }).appendTo("#wbtDiagram");  
-        
-        
+            }).appendTo("#wbtDiagram");
+
+
             jQuery("<button/>", {
                 id: "removeBoxButton",
                 click: "removeBox()",
                 text: "Click to remove a box."
             }).appendTo("#drag");
         };
-        
+
         function removeBox(){
             $("div").remove("#drag");
         };
-        
+
     </script>
-    
+
 </body>
 
 </html>

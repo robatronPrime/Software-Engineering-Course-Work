@@ -16,7 +16,7 @@ li{
     list-style-type: none;
 }
 
-button{
+a{
     border: none;
     background-color: #ffffff;
     width: 7em;
@@ -26,11 +26,16 @@ button{
     margin-bottom: 0.5em;
     float: right;
     display: inline-block;
+    text-align: center;
 }
 
-button:hover {
-    background-color: #CC3A4B; /* Green */
+a:hover {
+    background-color: #CC3A4B;
     color: white;
+}
+
+.active{
+  background: #CC3A4B;
 }
 
 fieldset{
@@ -39,6 +44,7 @@ fieldset{
     height: 30em;
     -webkit-box-shadow: 5px 5px 5px 5px #193441;
     box-shadow: 5px 5px 5px 5px #193441;
+
 }
 
 section #title, #charts{
@@ -80,6 +86,22 @@ img{
     border-color: #3A9DCC;
     width: 10em;
     height: auto;
+}
+
+#wbtField{
+  display: none;
+}
+
+#pertField{
+  display: none;
+}
+
+#ganttField{
+  display: none;
+}
+
+#infoField{
+  display: none;
 }
 
 @font-face{
