@@ -48,13 +48,11 @@
                 <section id="wbtForm" class="grid-10 tablet-grid-100 mobile-grid-100">
                     <h2>WBT</h2>
                     <a type="button" id="addBoxButton" onclick="appendBox()">
-                        <p>Click to add a box.</p>
-                    </a>
-                    <a  type="button" id="addBoxButton" onclick="">
-                      <p>Another function.</p>
+                        <p>Add a box.</p>
                     </a>
                 </section>
-                <div id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
+                <div id="wbtDiagram" class="grid-90 tablet-grid-100 mobile-grid-100">
+
                 </div>
             </fieldset>
 
@@ -62,7 +60,7 @@
                 <section id="pertForm" class="form" class="grid-10 tablet-grid-100 mobile-grid-100">
                     <h2>PERT</h2>
                 </section>
-                <section id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
+                <section id="pertDiagram" class="grid-90 tablet-grid-100 mobile-grid-100">
                 </section>
             </fieldset>
 
@@ -70,7 +68,7 @@
                 <section id="ganttForm" class="form" class="grid-10 tablet-grid-100 mobile-grid-100">
                     <h3>GANTT</h3>
                 </section>
-                <section id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
+                <section id="ganttDiagram" class="grid-90 tablet-grid-100 mobile-grid-100">
                 </section>
             </fieldset>
 
@@ -79,17 +77,17 @@
                     <h3>What Does This Web Application Do?</h3>
                     <p>
                       This web application allows students to plan their final
-                      year projects. The website can create 3 types of
+                      year projects. The website is can create 3 types of
                       graphs; Gantt charts, WBT and PERT charts.
                       </br>
-                      Below there is more information on these graphs.
+                      Below is more information on these graphs.
                     </p>
                     <div id="graphInfo" class="grid-25 tablet-grid-100 mobile-grid-100">
                         <h3>WBT</h3>
                         <img src="images/wbt.png" alt="wbt" id="graphImg">
                         <p>
                           <b>Description :</b> A WBT template to show the hierarchical
-                          decomposition of work in a project.
+                          decomposition of work in a project
                         </p>
                     </div>
                     <div id="graphInfo" class="grid-25 tablet-grid-100 mobile-grid-100">
@@ -143,7 +141,7 @@
 
         if (wbtB.className == 'active') {
           wbtB.classList.remove('active');
-        } else{
+        } else {
           wbtB.classList.add('active');
         }
     }
