@@ -48,14 +48,14 @@
                 <section id="wbtForm" class="grid-10 tablet-grid-100 mobile-grid-100">
                     <h2>WBT</h2>
                     <a type="button" id="addBoxButton" onclick="appendBox()">
-                        <p>Click to add a box.</p>
-                    </a>
-                    <a  type="button" id="addBoxButton" onclick="">
-                      <p>Another function.</p>
+                        <p>Add a box.</p>
                     </a>
                 </section>
+                
                 <div id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
                     <!-- Put box adding code (point the javascript here, appendto) in here-->
+                <div id="wbtDiagram" class="grid-90 tablet-grid-100 mobile-grid-100">
+                    
                 </div>
             </fieldset>
 
@@ -63,7 +63,7 @@
                 <section id="pertForm" class="form" class="grid-10 tablet-grid-100 mobile-grid-100">
                     <h2>PERT</h2>
                 </section>
-                <section id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
+                <section id="pertDiagram" class="grid-90 tablet-grid-100 mobile-grid-100">
                 </section>
             </fieldset>
 
@@ -71,7 +71,7 @@
                 <section id="ganttForm" class="form" class="grid-10 tablet-grid-100 mobile-grid-100">
                     <h3>GANTT</h3>
                 </section>
-                <section id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
+                <section id="ganttDiagram" class="grid-90 tablet-grid-100 mobile-grid-100">
                 </section>
             </fieldset>
 
@@ -144,7 +144,7 @@
 
         if (wbtB.className == 'active') {
           wbtB.classList.remove('active');
-        } else{
+        } else {
           wbtB.classList.add('active');
         }
     }

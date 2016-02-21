@@ -64,13 +64,26 @@ section #title, #charts{
     float: left;
 }
 
-#diagram{
+#wbtDiagram{
   border: none;
   height: 100%;
   -webkit-box-shadow: 1px 1px 5px 1px #96938C;
   box-shadow: 1px 1px 5px 1px #96938C;
 }
 
+#pertDiagram{
+  border: none;
+  height: 100%;
+  -webkit-box-shadow: 1px 1px 5px 1px #96938C;
+  box-shadow: 1px 1px 5px 1px #96938C;
+}
+
+#ganttDiagram{
+  border: none;
+  height: 100%;
+  -webkit-box-shadow: 1px 1px 5px 1px #96938C;
+  box-shadow: 1px 1px 5px 1px #96938C;
+}
 
 #Logo{
     margin : 0px 0px 0px 0px;
