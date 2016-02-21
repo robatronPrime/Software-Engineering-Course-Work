@@ -36,12 +36,13 @@ a:hover {
 
 .active{
   background: #CC3A4B;
+  color: white;
 }
 
 fieldset{
     border: none;
     margin: 1em;
-    height: 30em;
+    height: 100%;
     -webkit-box-shadow: 5px 5px 5px 5px #193441;
     box-shadow: 5px 5px 5px 5px #193441;
 
@@ -51,7 +52,7 @@ section #title, #charts{
     background-color: #193441;
 }
 
-img{
+#logo{
     height: 100%;
     width: 600px;
     margin-top: 0.1em;
@@ -63,11 +64,13 @@ img{
     float: left;
 }
 
-#wbtDiagram{
-    border: solid;
-    border-color: #3A9DCC;
-    height: 100%;
+#diagram{
+  border: none;
+  height: 100%;
+  -webkit-box-shadow: 1px 1px 5px 1px #96938C;
+  box-shadow: 1px 1px 5px 1px #96938C;
 }
+
 
 #Logo{
     margin : 0px 0px 0px 0px;
@@ -102,6 +105,19 @@ img{
 
 #infoField{
   display: none;
+}
+
+#graphInfo{
+  border: none;
+  -webkit-box-shadow: 1px 1px 5px 1px #96938C;
+  box-shadow: 1px 1px 5px 1px #96938C;
+  width: 30%;
+  margin: 10px;
+}
+
+#graphImg{
+  width: 100%;
+
 }
 
 @font-face{

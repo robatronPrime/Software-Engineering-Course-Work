@@ -21,7 +21,7 @@
 <body>
 
     <section id="Logo" class="grid-100 tablet-grid-100 mobile-grid-100">
-        <img src="images/logo.png" alt="logo">
+        <img src="images/logo.png" alt="logo" id="logo">
     </section>
 
     <section id="content" class="grid-25 tablet-grid-100 mobile-grid-100">
@@ -47,12 +47,15 @@
             <fieldset id="wbtField" class="chart">
                 <section id="wbtForm" class="grid-10 tablet-grid-100 mobile-grid-100">
                     <h2>WBT</h2>
-                    <button type="button" id="addBoxButton" onclick="appendBox()">
+                    <a type="button" id="addBoxButton" onclick="appendBox()">
                         <p>Click to add a box.</p>
-                    </button>
+                    </a>
+                    <a  type="button" id="addBoxButton" onclick="">
+                      <p>Another function.</p>
+                    </a>
                 </section>
-                <section id="wbtDiagram" class="grid-90 tablet-grid-100 mobile-grid-100">
-                </section>
+                <div id="diagram" class="grid-90 tablet-grid-100 mobile-grid-100">
+                </div>
             </fieldset>
 
             <fieldset id="pertField" class="chart">
@@ -72,8 +75,47 @@
             </fieldset>
 
             <fieldset id="infoField" class="chart">
-                <section id="infoContent" class="form" class="grid-10 tablet-grid-100 mobile-grid-100">
-                    <h3>Information</h3>
+                <section id="infoContent" class="grid-100 tablet-grid-100 mobile-grid-100">
+                    <h3>What Does This Web Application Do?</h3>
+                    <p>
+                      This web application allows students to plan their final
+                      year projects. The website is can create 3 types of
+                      graphs; Gantt charts, WBT and PERT charts.
+                      </br>
+                      Below is more information on these graphs.
+                    </p>
+                    <div id="graphInfo" class="grid-25 tablet-grid-100 mobile-grid-100">
+                        <h3>WBT</h3>
+                        <img src="images/wbt.png" alt="wbt" id="graphImg">
+                        <p>
+                          <b>Description :</b> A WBT template to show the hierarchical
+                          decomposition of work in a project
+                        </p>
+                    </div>
+                    <div id="graphInfo" class="grid-25 tablet-grid-100 mobile-grid-100">
+                        <h3>PERT</h3>
+                        <img src="images/PERT.png" alt="pert" id="graphImg">
+                        <p>
+                          <b>Description :</b> A PERT chart is a graph that
+                          represents all of the tasks necessary to a project's
+                          completion, and the order in which they must be
+                          completed along with the corresponding time
+                          requirements.
+                        </p>
+                    </div>
+                    <div id="graphInfo" class="grid-25 tablet-grid-100 mobile-grid-100">
+                        <h3>GANNT</h3>
+                        <img src="images/GANTT.jpg" alt="gantt" id="graphImg">
+                        <p>
+                          <b>Description :</b> A Gantt chart is one of the most
+                          popular and useful ways of showing activities (tasks
+                          or events) displayed against time. On the left of the
+                          chart is a list of the activities and along the top
+                          is a suitable time scale. Each activity is represented
+                          by a bar; the position and length of the bar reflects
+                          the start date, duration and end date of the activity.
+                        </p>
+                    </div>
                 </section>
             </fieldset>
 
@@ -99,23 +141,44 @@
         var wbtF = document.getElementById('wbtField');
         wbtF.style.display = (wbtF.style.display == 'block') ? 'none' : 'block';
 
-        if (wbtB.className == 'active') wbtB.classList.remove('active');
-        wbtB.classList.add('active');
+        if (wbtB.className == 'active') {
+          wbtB.classList.remove('active');
+        } else{
+          wbtB.classList.add('active');
+        }
     }
 
     function showHidePERT() {
       var pertF = document.getElementById('pertField');
       pertF.style.display = (pertF.style.display == "block") ? "none" : "block";
+
+      if (pertB.className == 'active') {
+        pertB.classList.remove('active');
+      } else{
+        pertB.classList.add('active');
+      }
     }
 
     function showHideGantt() {
       var ganttF = document.getElementById('ganttField');
       ganttF.style.display = (ganttF.style.display == "block") ? "none" : "block";
+
+      if (ganttB.className == 'active') {
+        ganttB.classList.remove('active');
+      } else{
+        ganttB.classList.add('active');
+      }
     }
 
     function showHideInfo() {
       var infoF = document.getElementById('infoField');
       infoF.style.display = (infoF.style.display == "block") ? "none" : "block";
+
+      if (infoB.className == 'active') {
+        infoB.classList.remove('active');
+      } else{
+        infoB.classList.add('active');
+      }
     }
 
 
