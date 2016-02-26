@@ -16,7 +16,7 @@ Building API, RESTful if possible
 
 Button - opaque or sth else ot indicate that they are pressed --> Rob COMPLETE
 
-wbt - research required to do this. I think we should use WebGL a web graphis library. [#####Here is a link.](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API)
+wbt - research required to do this. I think we should use WebGL a web graphis library. [##Here is a link.](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API)
 I suggest we all read thought the tutorials. Get a funtional wbt graph working. --> Rob and Joe 
 
 gantt - Creation of a funtioning gantt chart. --> Tony
