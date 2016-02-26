@@ -14,9 +14,16 @@ Database- UML, actual Database --> Ajaimon
 
 Building API, RESTful if possible 
 
-Button - opaque or sth else ot indicate that they are pressed --> Rob
+Button - opaque or sth else ot indicate that they are pressed --> Rob COMPLETE
 
-Building the javaScript objects which will contain the data from the Database and from which we will build the charts. (Rob has some javaScript build already, try to synchronise with him if the need arises) --> Tony
+wbt - research required to do this. I think we should use WebGL a web graphis library. [#####Here is a link.](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API)
+I suggest we all read thought the tutorials. Get a funtional wbt graph working. --> Rob and Joe 
+
+gantt - Creation of a funtioning gantt chart. --> Tony
+
+pert - Design and implementation, with WebGL, sketch and wireframe. --> Will
+
+help doc - Creating a word document about the site, how it functions and how users opperate it. Later implament into the site. --> Petros
 
 Save button feature which will upload the changed to the database 
 ____________________________________________________________________________________________
