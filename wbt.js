@@ -72,7 +72,11 @@
                         direction: directionInput.value
                     }
                 },
-                physics:false
+                physics:false,
+                interaction: {
+                    navigationButtons: true,
+                    keyboard: true
+                }
             };
             network = new vis.Network(container, data, options);
 
