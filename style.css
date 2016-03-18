@@ -133,6 +133,12 @@ section #title, #charts{
 
 }
 
+#wbtDiagram {
+  width: 85%;
+  height: 600px;
+  border: 1px solid lightgray;
+}
+
 @font-face{
     font-family: LibreBaskerville-Regular;
     src: url(fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf)
