@@ -1,4 +1,5 @@
 
+
         var nodes = null;
         var edges = null;
         var network = null;
@@ -76,6 +77,11 @@
                 interaction: {
                     navigationButtons: true,
                     keyboard: true
+                },
+                "arrows": {
+                    "to": {
+                        "enabled": true
+                    }
                 }
             };
             network = new vis.Network(container, data, options);
