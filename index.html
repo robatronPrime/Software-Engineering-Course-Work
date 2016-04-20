@@ -11,9 +11,13 @@
         href="unsemantic-grid-responsive-tablet.css"/>
     <!--Style sheet link.-->
     <link rel="stylesheet" type="text/css" href="style.css"/>
-    <!--Link to Vis.js files-->
-    <script type="text/javascript" src="vis/dist/vis.js"></script><style type="text/css"></style>
-    <link href="vis/dist/vis.css" rel="stylesheet" type="text/css">
+    <!--Link to Font Awesome, a image libary.-->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!--Ajax link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/vis/dist/vis.js"></script><style type="text/css"></style>
+    <link href="/vis/dist/vis.css" rel="stylesheet" type="text/css">
 </head>
 
 <body onload="draw();">
@@ -51,14 +55,99 @@
                 <section id="wbtForm" class="grid-10 tablet-grid-100 mobile-grid-100">
                     <h2>WBT</h2>
                     <a type="button" id="addBoxButton" onclick="appendBox()">
-                        <p>Add a box.</p>
                     </a>
                 </section>
-                   
-                <div id="wbtDiagram" class="grid-90 tablet-grid-100 mobile-grid-100">
-                    <div class="vis-network" tabindex="900" style="position: relative; overflow: hidden; touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 100%; height: 100%;">
-                    </div>
-                        <canvas style="position: relative; touch-action: none; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 100%; height: 100%;" width="1200" height="1200"></canvas>
+                <table>
+    <tbody><tr>
+        <td>
+            <h2>Node</h2>
+            <table>
+                <tbody><tr>
+                    <td></td>
+                    <td><label for="node-id">Id</label></td>
+                    <td><input id="node-id" type="text" value="6"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><label for="node-label">Label</label></td>
+                    <td><input id="node-label" type="text" value="Node 6"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Action</td>
+                    <td>
+                        <button id="node-add" onclick="addNode();">Add</button>
+                        <button id="node-update" onclick="updateNode();">Update</button>
+                        <button id="node-remove" onclick="removeNode();">Remove</button>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+        <td>
+            <h2>Edge</h2>
+            <table>
+                <tbody><tr>
+                    <td></td>
+                    <td><label for="edge-id">Id</label></td>
+                    <td><input id="edge-id" type="text" value="5"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><label for="edge-from">From</label></td>
+                    <td><input id="edge-from" type="text" value="3"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><label for="edge-to">To</label></td>
+                    <td><input id="edge-to" type="text" value="4"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Action</td>
+                    <td>
+                        <button id="edge-add" onclick="addEdge();">Add</button>
+                        <button id="edge-update" onclick="updateEdge();">Update</button>
+                        <button id="edge-remove" onclick="removeEdge();">Remove</button>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+
+</tbody></table>
+
+<h1>View</h1>
+<table class="view">
+    <colgroup>
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+    </colgroup>
+    <tbody><tr>
+            <td id="nodeHide">
+            <h2>Nodes</h2>
+            <pre id="nodes">[
+                {
+                "id": "1",
+                "label": "This is your first Node, update it"
+                }
+                ]</pre>
+            </td>
+
+            <td id="nodeHide">
+            <h2>Edges</h2>
+            <pre id="edges">[
+            ]</pre>
+            </td> 
+
+        <td>
+            <h2>Network</h2>
+
+            <div id="wbtDiagram"><div class="vis-network" tabindex="900" style="position: relative; overflow: hidden; touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 100%; height: 100%;"><canvas style="position: relative; touch-action: none; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 100%; height: 100%;" width="950" height="800"></canvas></div></div>
+        </td>
+    </tr>
+</tbody></table>
+                </div>
                         <div class="vis-navigation">
                             <div class="vis-button vis-up" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
                             <div class="vis-button vis-down" style="touch-action: pan-y; -webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>

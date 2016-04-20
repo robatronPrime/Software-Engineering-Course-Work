@@ -1,57 +1,93 @@
 
+        var nodes, edges, network;
 
-        var nodes = null;
-        var edges = null;
-        var network = null;
-        var directionInput = document.getElementById("direction");
+        // convenience method to stringify a JSON object
+        function toJSON(obj) {
+            return JSON.stringify(obj, null, 4);
+        }
 
-        function destroy() {
-            if (network !== null) {
-                network.destroy();
-                network = null;
+        function addNode() {
+            try {
+                nodes.add({
+                    id: document.getElementById('node-id').value,
+                    label: document.getElementById('node-label').value
+                });
+            }
+            catch (err) {
+                alert(err);
+            }
+        }
+
+        function updateNode() {
+            try {
+                nodes.update({
+                    id: document.getElementById('node-id').value,
+                    label: document.getElementById('node-label').value
+                });
+            }
+            catch (err) {
+                alert(err);
+            }
+        }
+        function removeNode() {
+            try {
+                nodes.remove({id: document.getElementById('node-id').value});
+            }
+            catch (err) {
+                alert(err);
+            }
+        }
+
+        function addEdge() {
+            try {
+                edges.add({
+                    id: document.getElementById('edge-id').value,
+                    from: document.getElementById('edge-from').value,
+                    to: document.getElementById('edge-to').value
+                });
+            }
+            catch (err) {
+                alert(err);
+            }
+        }
+        function updateEdge() {
+            try {
+                edges.update({
+                    id: document.getElementById('edge-id').value,
+                    from: document.getElementById('edge-from').value,
+                    to: document.getElementById('edge-to').value
+                });
+            }
+            catch (err) {
+                alert(err);
+            }
+        }
+        function removeEdge() {
+            try {
+                edges.remove({id: document.getElementById('edge-id').value});
+            }
+            catch (err) {
+                alert(err);
             }
         }
 
         function draw() {
-            destroy();
-            nodes = [];
-            edges = [];
-            var connectionCount = [];
+            // create an array with nodes
+            nodes = new vis.DataSet();
+            nodes.on('*', function () {
+                document.getElementById('nodes').innerHTML = JSON.stringify(nodes.get(), null, 4);
+            });
+            nodes.add([
+                {id: '1', label: 'This is your first Node, update it'}
+            ]);
 
-            // randomly create some nodes and edges
-            for (var i = 0; i < 15; i++) {
-                nodes.push({id: i, label: String(i)});
-            }
-            edges.push({from: 0, to: 1});
-            edges.push({from: 0, to: 6});
-            edges.push({from: 0, to: 13});
-            edges.push({from: 0, to: 11});
-            edges.push({from: 1, to: 2});
-            edges.push({from: 2, to: 3});
-            edges.push({from: 2, to: 4});
-            edges.push({from: 3, to: 5});
-            edges.push({from: 1, to: 10});
-            edges.push({from: 1, to: 7});
-            edges.push({from: 2, to: 8});
-            edges.push({from: 2, to: 9});
-            edges.push({from: 3, to: 14});
-            edges.push({from: 1, to: 12});
-            nodes[0]["level"] = 0;
-            nodes[1]["level"] = 1;
-            nodes[2]["level"] = 3;
-            nodes[3]["level"] = 4;
-            nodes[4]["level"] = 4;
-            nodes[5]["level"] = 5;
-            nodes[6]["level"] = 1;
-            nodes[7]["level"] = 2;
-            nodes[8]["level"] = 4;
-            nodes[9]["level"] = 4;
-            nodes[10]["level"] = 2;
-            nodes[11]["level"] = 1;
-            nodes[12]["level"] = 2;
-            nodes[13]["level"] = 1;
-            nodes[14]["level"] = 5;
-
+            // create an array with edges
+            edges = new vis.DataSet();
+            edges.on('*', function () {
+                document.getElementById('edges').innerHTML = JSON.stringify(edges.get(), null, 4);
+            });
+            edges.add([
+            ]);
 
             // create a network
             var container = document.getElementById('wbtDiagram');
@@ -59,42 +95,15 @@
                 nodes: nodes,
                 edges: edges
             };
-
-            var options = {
-                edges: {
-                    smooth: {
-                        type: 'cubicBezier',
-                        forceDirection: (directionInput.value == "UD") ? 'vertical' : 'horizontal',
-                        roundness: 0.4
-                    }
-                },
-                layout: {
-                    hierarchical: {
-                        direction: directionInput.value
-                    }
-                },
-                physics:false,
-                interaction: {
-                    navigationButtons: true,
-                    keyboard: true
-                },
-                "arrows": {
-                    "to": {
-                        "enabled": true
-                    }
-                }
-            };
-            network = new vis.Network(container, data, options);
+            var options = {physics: false,
+                          interaction: {
+                              navigationButtons: true,
+                              keyboard: true
+                          }
+                          };
+            wbtDiagram = new vis.Network(container, data, options);
 
         }
 
-
     
-
-    var directionInput = document.getElementById("direction");
-    var btnUD = document.getElementById("btn-UD");
-    btnUD.onclick = function () {
-        directionInput.value = "UD";
-        draw();
-    };
     
